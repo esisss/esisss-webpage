@@ -9,14 +9,74 @@ import "../styles/globals.css";
 ---
 
 <Layout>
-    <main class="w-full bg-black">
-        <section class="relative w-full h-screen overflow-hidden">
+    <div class="relative min-h-screen bg-black text-white">
+        <div class="fixed inset-x-0 top-0 z-0 h-svh overflow-hidden">
             <FullHero />
-        </section>
-        
+            <div id="scene-blur-overlay" class="scene-blur-overlay"></div>
+        </div>
+
+        <main class="relative z-10 w-full">
+            <section class="h-screen" aria-hidden="true"></section>
+
         <AboutSection />
         <SkillsSection />
         <CareerSection />
         <ContactSection />
-    </main>
+        </main>
+    </div>
+
+    <script>
+        const overlay = document.getElementById("scene-blur-overlay");
+
+        if (overlay) {
+            let currentStrength = 0;
+            let targetStrength = 0;
+            let rafId = 0;
+
+            const maxStrength = 0.8;
+            const ease = 0.12;
+
+            const getScrollProgress = () => {
+                const revealDistance = window.innerHeight * 0.9;
+                if (revealDistance <= 0) {
+                    return 0;
+                }
+
+                const progress = window.scrollY / revealDistance;
+                return Math.min(Math.max(progress, 0), 1);
+            };
+
+            const applyStrength = (strength: number) => {
+                overlay.style.setProperty("--scene-overlay-strength", strength.toFixed(4));
+            };
+
+            const tick = () => {
+                currentStrength += (targetStrength - currentStrength) * ease;
+
+                if (Math.abs(targetStrength - currentStrength) < 0.001) {
+                    currentStrength = targetStrength;
+                }
+
+                applyStrength(currentStrength);
+
+                if (Math.abs(targetStrength - currentStrength) >= 0.001) {
+                    rafId = window.requestAnimationFrame(tick);
+                } else {
+                    rafId = 0;
+                }
+            };
+
+            const updateTarget = () => {
+                targetStrength = getScrollProgress() * maxStrength;
+                if (!rafId) {
+                    rafId = window.requestAnimationFrame(tick);
+                }
+            };
+
+            applyStrength(0);
+            window.addEventListener("scroll", updateTarget, { passive: true });
+            window.addEventListener("resize", updateTarget);
+            updateTarget();
+        }
+    </script>
 </Layout>

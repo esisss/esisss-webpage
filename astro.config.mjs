@@ -6,5 +6,8 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    preview: {
+      allowedHosts: ["isa-sound-overseas-brothers.trycloudflare.com"],
+    },
   },
 });

@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.scene-blur-overlay {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	--scene-overlay-strength: 0;
+	background: rgba(5, 9, 14, calc(var(--scene-overlay-strength) * 0.55));
+	backdrop-filter: blur(calc(var(--scene-overlay-strength) * 22px));
+	-webkit-backdrop-filter: blur(calc(var(--scene-overlay-strength) * 22px));
+}
