@@ -1,5 +1,5 @@
 ---
-import FullHero from "../components/HeroSection/FullHero.astro";
+import ThreeScene from "../components/ThreeScene.astro"
 import Layout from "../layouts/Layout.astro";
 import AboutSection from "../components/AboutSection.astro";
 import SkillsSection from "../components/SkillsSection.astro";
@@ -10,8 +10,20 @@ import "../styles/globals.css";
 
 <Layout>
     <div class="relative min-h-screen bg-black text-white">
+        <header
+            id="site-header"
+            class="fixed inset-x-0 top-0 z-20 border-b border-white/20 bg-slate-950/0 backdrop-blur-[0px]"
+        >
+            <p
+                id="site-header-title"
+                class="m-0 px-4 py-4 text-[0.88rem] font-semibold tracking-[0.02em] text-white sm:px-8 sm:text-base"
+            >
+                Jesus Esis - Fullstack Developer
+            </p>
+        </header>
+
         <div class="fixed inset-x-0 top-0 z-0 h-svh overflow-hidden">
-            <FullHero />
+            <ThreeScene />
             <div id="scene-blur-overlay" class="scene-blur-overlay"></div>
         </div>
 
@@ -26,15 +38,16 @@ import "../styles/globals.css";
     </div>
 
     <script>
+        import { animate, motionValue } from "motion";
+
         const overlay = document.getElementById("scene-blur-overlay");
+        const header = document.getElementById("site-header");
+        const headerTitle = document.getElementById("site-header-title");
 
-        if (overlay) {
-            let currentStrength = 0;
-            let targetStrength = 0;
-            let rafId = 0;
-
-            const maxStrength = 0.8;
-            const ease = 0.12;
+        if (overlay || header) {
+            const maxOverlayStrength = 0.8;
+            const progress = motionValue(0);
+            let currentAnimation: ReturnType<typeof animate> | null = null;
 
             const getScrollProgress = () => {
                 const revealDistance = window.innerHeight * 0.9;
@@ -46,34 +59,38 @@ import "../styles/globals.css";
                 return Math.min(Math.max(progress, 0), 1);
             };
 
-            const applyStrength = (strength: number) => {
-                overlay.style.setProperty("--scene-overlay-strength", strength.toFixed(4));
-            };
-
-            const tick = () => {
-                currentStrength += (targetStrength - currentStrength) * ease;
-
-                if (Math.abs(targetStrength - currentStrength) < 0.001) {
-                    currentStrength = targetStrength;
+            const applyVisuals = (value: number) => {
+                if (overlay) {
+                    const overlayStrength = value * maxOverlayStrength;
+                    overlay.style.setProperty("--scene-overlay-strength", overlayStrength.toFixed(4));
                 }
 
-                applyStrength(currentStrength);
+                if (header) {
+                    header.style.backgroundColor = `rgb(5 9 14 / ${value.toFixed(4)})`;
+                    header.style.borderBottomColor = `rgb(255 255 255 / ${(value * 0.18).toFixed(4)})`;
+                    header.style.backdropFilter = `blur(${(value * 10).toFixed(3)}px)`;
+                    // header.style.webkitBackdropFilter = `blur(${(value * 10).toFixed(3)}px)`;
+                }
 
-                if (Math.abs(targetStrength - currentStrength) >= 0.001) {
-                    rafId = window.requestAnimationFrame(tick);
-                } else {
-                    rafId = 0;
+                if (headerTitle) {
+                    const textOpacity = 0.72 + value * 0.28;
+                    const shadowOpacity = 0.35 + value * 0.35;
+                    headerTitle.style.color = `rgb(255 255 255 / ${textOpacity.toFixed(4)})`;
+                    headerTitle.style.textShadow = `0 2px 14px rgb(0 0 0 / ${shadowOpacity.toFixed(4)})`;
                 }
             };
+
+            progress.on("change", applyVisuals);
 
             const updateTarget = () => {
-                targetStrength = getScrollProgress() * maxStrength;
-                if (!rafId) {
-                    rafId = window.requestAnimationFrame(tick);
-                }
+                currentAnimation?.stop();
+                currentAnimation = animate(progress, getScrollProgress(), {
+                    duration: 0.35,
+                    ease: [0.22, 1, 0.36, 1],
+                });
             };
 
-            applyStrength(0);
+            applyVisuals(0);
             window.addEventListener("scroll", updateTarget, { passive: true });
             window.addEventListener("resize", updateTarget);
             updateTarget();
