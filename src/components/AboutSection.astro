@@ -1,12 +1,21 @@
 ---
-// AboutSection.astro
+import type { TranslateFn } from "../i18n/utils";
+
+interface Props {
+  t?: TranslateFn;
+}
+
+const { t } = Astro.props as Props;
+const title = t ? t("about.title") : "About Me";
+const description = t
+  ? t("about.text")
+  : "I'm a passionate developer dedicated to building immersive web experiences. I love combining design and technology to create interactive and highly performant applications.";
 ---
 <section id="about" class="w-full h-[50vh] flex items-center justify-center bg-transparent px-6">
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">About Me</h2>
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">{title}</h2>
     <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
-      I'm a passionate developer dedicated to building immersive web experiences. 
-      I love combining design and technology to create interactive and highly performant applications.
+      {description}
     </p>
   </div>
 </section>

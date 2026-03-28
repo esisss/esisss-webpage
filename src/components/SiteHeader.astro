@@ -1,0 +1,33 @@
+---
+import type { TranslateFn } from "../i18n/utils";
+
+interface Props {
+    t?: TranslateFn;
+    lang: "es" | "en";
+}
+
+const { t, lang } = Astro.props as Props;
+
+---
+
+<header
+    id="site-header"
+    class="fixed inset-x-0 top-0 z-20 border-b border-white/20 bg-slate-950/0 backdrop-blur-[0px] flex flex-row justify-between items-center"
+>
+    <p
+        id="site-header-title"
+        class="m-0 px-4 py-4 text-[0.88rem] font-semibold tracking-[0.02em] text-white sm:px-8 sm:text-base"
+    >
+        {t?.("nav.title")}
+    </p>
+    <div class="h-full flex flex-row justify-center items-center gap-4 px-4 sm:gap-6 sm:px-8">
+        <a class={`${lang === "es"? "font-bold text-white": "text-gray opacity-50" }`} href="/es">ES</a>
+        <a class={`${lang === "en"? "font-bold text-white": "text-gray opacity-50" }`} href="/en">EN</a>
+    </div>
+</header>
+
+<script>
+    import { initNavbarEffects } from "../scripts/navbar";
+
+    initNavbarEffects();
+</script>

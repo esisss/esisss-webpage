@@ -1,0 +1,137 @@
+{
+	"tab.title": "Esisss - Desarrollador Fullstack",
+	"nav.title": "Jesus Esis - Desarrollador Fullstack",
+	"loader.label": "CARGANDO",
+	"about.title": "Sobre mí",
+	"about.text": "Soy un desarrollador fullstack con más de 5 años de experiencia creando aplicaciones web. Me apasiona construir productos digitales que resuelvan problemas reales y mejoren la vida de las personas. Mi enfoque es el desarrollo frontend, pero también tengo experiencia en backend y bases de datos. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos que me permitan crecer como profesional.",
+	"skills.tools.title": "Herramientas y Tecnologías",
+	"skills.tools.list": [
+		"React",
+		"Next.js",
+		"TypeScript",
+		"Node.js",
+		"Three.js",
+		"Astro",
+		"Tailwind CSS",
+		"Vercel",
+		"GitHub"
+	],
+	"experience.title": "Experiencia",
+	"contact.title": "Trabajemos juntos!",
+	"contact.text": "Si estás interesado en colaborar, tienes una oportunidad laboral o simplemente quieres saludar, no dudes en contactarme. Estoy abierto a nuevas aventuras y siempre dispuesto a conectar con otros profesionales del mundo tech.",
+	"contact.button": "Contáctame",
+	"rpg": {
+		"intro": {
+			"speaker": "Ralof",
+			"text": "Eh... otro viajero en estas aguas oscuras. Bienvenido, bienvenido. Perdona si miro hacia atrás de vez en cuando... tuve un pequeño inconveniente con los guardias del fuerte. Nada grave. Afortunadamente no saben nadar. ¿Qué te trae a estas tierras olvidadas?",
+			"options": [
+				{ "id": "who_are_you", "label": "¿Quién eres tú?" },
+				{ "id": "the_fort", "label": "¿Qué es ese fuerte en la montaña?" },
+				{ "id": "seek_creator", "label": "Busco al creador de este mundo." },
+				{ "id": "see_work", "label": "Solo quiero ver el trabajo del creador." }
+			]
+		},
+
+		"who_are_you": {
+			"speaker": "Ralof",
+			"text": "¿Yo? Ralof. Ladrón de oficio, filósofo por accidente. Pasé años robando respuestas que nadie guardaba bien. Hasta que encontré algo que no pude robar... solo entender. Pero tú no preguntaste por mí realmente. Hay algo más que buscas, lo veo en tus ojos.",
+			"options": [
+				{ "id": "what_did_you_find", "label": "¿Qué encontraste?" },
+				{ "id": "seek_creator", "label": "Busco al creador de este mundo." },
+				{ "id": "the_fort", "label": "¿Qué es ese fuerte?" }
+			]
+		},
+
+		"what_did_you_find": {
+			"speaker": "Ralof",
+			"text": "En el sótano del fuerte... un tablón de piedra tallada. Antiguo. Decía que este mundo no surgió solo. Fue forjado. Por una entidad llamada... Fullstack Developer. De nombre Jesús. Curioso nombre para un dios, ¿no? Yo tampoco lo entendí al principio.",
+			"options": [
+				{ "id": "what_did_tablet_say", "label": "¿Qué más decía el tablón?" },
+				{ "id": "sounds_crazy", "label": "Eso suena a locura." },
+				{ "id": "tell_me_more", "label": "Quiero saber más de él." }
+			]
+		},
+
+		"what_did_tablet_say": {
+			"speaker": "Ralof",
+			"text": "Que dominaba artes con nombres imposibles... React, Next.js, TypeScript, Node.js... lo leí tres veces y seguí sin entender. Intenté pronunciarlos en voz alta y un guardia me miró raro. Este mundo fue forjado con algo llamado Three.js y Astro. No sé si son hechizos, herramientas de alquimia o nombres de dragones. Pero el tablón los mencionaba con mucho respeto.",
+			"options": [
+				{ "id": "where_to_find", "label": "¿Dónde puedo encontrarlo?" },
+				{ "id": "other_creations", "label": "¿Tiene otras creaciones?" },
+				{ "id": "what_does_he_seek", "label": "¿Qué busca él?" }
+			]
+		},
+
+		"where_to_find": {
+			"speaker": "Ralof",
+			"text": "El tablón mencionaba algo sobre... pisar un botón? Un botón de contacto. No sé qué es un botón en este contexto, en mi mundo los botones son de tela y van en las túnicas. Pero el tablón lo decía con énfasis. Pisar el botón de contacto. Es lo próximo que pretendo encontrar... aunque llevo un rato buscándolo y no veo ninguna túnica por aquí.",
+			"options": [
+				{ "id": "other_creations", "label": "¿Tiene otras creaciones?" },
+				{ "id": "what_does_he_seek", "label": "¿Qué busca él?" }
+			]
+		},
+
+		"other_creations": {
+			"speaker": "Ralof",
+			"text": "Sí, había registros. MealTrack... algo relacionado con comida y despensas, creo. Blog CMS... crónicas de escribas, supongo. Funcionan, eso decía el tablón. Yo intenté entrar a uno y no pude. Quizás necesito uno de esos... navegadores? Otra palabra del tablón que no entendí.",
+			"options": [
+				{ "id": "see_creations", "label": "¿Dónde puedo verlas?" },
+				{ "id": "what_does_he_seek", "label": "¿Qué busca él?" }
+			]
+		},
+
+		"see_creations": {
+			"speaker": "Ralof",
+			"text": "El tablón mencionaba dos portales donde descansan sus obras. Uno llamado mealtrack-app.vercel.app y otro... github.com/esisss. Los grabé en mi memoria palabra por palabra aunque no entiendo ni una. Parecían importantes.",
+			"options": [
+				{ "id": "what_does_he_seek", "label": "¿Qué busca él?" },
+				{ "id": "where_to_find", "label": "¿Dónde puedo encontrarlo?" }
+			]
+		},
+
+		"what_does_he_seek": {
+			"speaker": "Ralof",
+			"text": "Eso sí me lo pregunto yo también. El tablón decía que es curioso, que le gusta entender el porqué detrás de cada herramienta que usa. Que busca construir algo llamado... producto? SaaS? No tengo idea. En mi mundo construimos cabañas y fortalezas. Supongo que es algo similar pero digital. Esa palabra tampoco la entiendo. El caso es que está abierto a cualquier aventura que valga la pena. Eso sí lo entiendo.",
+			"options": [
+				{ "id": "where_to_find", "label": "¿Dónde puedo encontrarlo?" },
+				{ "id": "other_creations", "label": "¿Tiene otras creaciones?" }
+			]
+		},
+
+		"the_fort": {
+			"speaker": "Ralof",
+			"text": "Ese fuerte lleva mil años ahí. Los guardias no hablan. Yo logré entrar una vez, ya sabes, soy ladrón. Fue ahí donde encontré el tablón en el sótano. Salí con más preguntas que respuestas y sin ninguna moneda de oro. El peor robo de mi vida. Y el más valioso. Ahora me buscan, claro. Afortunadamente no saben nadar.",
+			"options": [
+				{ "id": "what_did_you_find", "label": "¿Qué encontraste adentro?" },
+				{ "id": "seek_creator", "label": "Busco al creador de este mundo." }
+			]
+		},
+
+		"sounds_crazy": {
+			"speaker": "Ralof",
+			"text": "Eso mismo pensé yo. Pero este mundo existe, ¿no? Estás aquí, yo estoy aquí, el agua es real bajo esta barca. Alguien lo hizo. Y ese alguien dejó su firma en un tablón de piedra en el sótano de un fuerte olvidado. Llámalo locura si quieres. Yo lo llamo la verdad más extraña que encontré en cuarenta años robando.",
+			"options": [
+				{ "id": "what_did_tablet_say", "label": "¿Qué más decía el tablón?" },
+				{ "id": "where_to_find", "label": "¿Dónde puedo encontrarlo?" }
+			]
+		},
+
+		"see_work": {
+			"speaker": "Ralof",
+			"text": "Directo al grano, me gusta. El tablón mencionaba dos portales donde descansan sus obras. Uno llamado mealtrack-app.vercel.app y otro github.com/esisss. Los grabé en mi memoria aunque no entiendo ni una palabra. Parecían importantes.",
+			"options": [
+				{ "id": "seek_creator", "label": "¿Quién creó todo esto?" },
+				{ "id": "where_to_find", "label": "¿Puedo encontrar al creador?" }
+			]
+		},
+
+		"tell_me_more": {
+			"speaker": "Ralof",
+			"text": "Una entidad llamada Fullstack Developer. De nombre Jesús. Curioso nombre para un dios. Forjó este mundo con artes que no comprendo — Three.js, Astro — y según el tablón lleva años creando mundos y herramientas. Este es solo uno de ellos.",
+			"options": [
+				{ "id": "what_did_tablet_say", "label": "¿Qué más decía el tablón?" },
+				{ "id": "where_to_find", "label": "¿Dónde puedo encontrarlo?" }
+			]
+		}
+	}
+}

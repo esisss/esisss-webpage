@@ -1,9 +1,16 @@
 ---
 // SkillsSection.astro
+import type { TranslateFn } from "../i18n/utils";
+
+interface Props {
+  t?: TranslateFn;
+}
+
+const { t } = Astro.props as Props;
 ---
 <section id="skills" class="w-full h-[50vh] flex items-center justify-center bg-transparent px-6 border-y border-zinc-900/80">
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Skills & Tools</h2>
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">{t?.("skills.tools.title")}</h2>
     <div class="flex flex-wrap justify-center gap-4 text-gray-300">
       <span class="px-4 py-2 bg-zinc-800 rounded-full">Astro</span>
       <span class="px-4 py-2 bg-zinc-800 rounded-full">Three.js</span>

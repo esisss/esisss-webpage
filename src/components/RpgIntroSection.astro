@@ -1,0 +1,32 @@
+---
+import type { TranslateFn } from "../i18n/utils";
+
+interface Props {
+  t: TranslateFn;
+}
+
+const { t } = Astro.props as Props;
+
+const introNode = t("rpg.intro");
+const introText = t("rpg.intro.text", { name: "Jesus" });
+const introOptions = t("rpg.intro.options");
+---
+
+<section
+  id="rpg-intro"
+  class="w-full min-h-[40vh] flex items-center justify-center bg-transparent px-6"
+>
+  <div class="w-full max-w-3xl rounded-xl border border-white/20 bg-black/45 p-6 backdrop-blur-sm">
+    <p class="mb-4 text-lg text-white">{introText}</p>
+
+    <ul class="space-y-2">
+      {introOptions.map((option) => (
+        <li class="rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/90">
+          {option.label}
+        </li>
+      ))}
+    </ul>
+
+    <p class="mt-4 text-xs text-white/60">{introNode.options.length} options available</p>
+  </div>
+</section>

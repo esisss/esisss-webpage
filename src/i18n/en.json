@@ -1,0 +1,146 @@
+{
+	"tab.title": "Esisss - Fullstack Developer",
+	"nav.title": "Jesus Esis - Fullstack Developer",
+	"loader.label": "LOADING",
+	"about.title": "About Me",
+	"about.text": "I'm a fullstack developer with more than 5 years of experience building web applications. I am passionate about creating digital products that solve real problems and improve people's lives. My main focus is frontend development, but I also have backend and database experience. I enjoy learning new technologies and tackling technical challenges that help me grow as a professional.",
+	"skills.tools.title": "Tools & Technologies",
+	"skills.tools.list": [
+		"React",
+		"Next.js",
+		"TypeScript",
+		"Node.js",
+		"Three.js",
+		"Astro",
+		"Tailwind CSS",
+		"Vercel",
+		"GitHub"
+	],
+	"experience.title": "Experience",
+	"contact.title": "Let's work together!",
+	"contact.text": "If you are interested in collaborating, have a job opportunity, or just want to say hi, feel free to reach out. I'm open to new adventures and always happy to connect with other professionals in tech.",
+	"contact.button": "Contact me",
+	"rpg": {
+		"intro": {
+			"speaker": "Ralof",
+			"text": "Eh... another traveler in these dark waters. Welcome, welcome. Forgive me if I keep glancing back... I had a small disagreement with the fort's guards. Nothing serious. Fortunately, they don't know how to swim. What brings you to these forgotten lands?",
+			"options": [
+				{ "id": "who_are_you", "label": "Who are you?" },
+				{ "id": "the_fort", "label": "What is that fort on the mountain?" },
+				{ "id": "seek_creator", "label": "I seek the creator of this world." },
+				{ "id": "see_work", "label": "I just want to see the creator's work." }
+			]
+		},
+
+		"who_are_you": {
+			"speaker": "Ralof",
+			"text": "Me? Ralof. Thief by trade, philosopher by accident. I spent years stealing answers that nobody kept well guarded. Until I found something I couldn't steal... only understand. But you didn't really ask about me. There's something else you seek, I can see it in your eyes.",
+			"options": [
+				{ "id": "what_did_you_find", "label": "What did you find?" },
+				{ "id": "seek_creator", "label": "I seek the creator of this world." },
+				{ "id": "the_fort", "label": "What is that fort?" }
+			]
+		},
+
+		"what_did_you_find": {
+			"speaker": "Ralof",
+			"text": "In the fort's basement... a carved stone tablet. Ancient. It said this world didn't come to be on its own. It was forged. By an entity called... Fullstack Developer. Named Jesús. A curious name for a god, don't you think? I didn't understand it at first either.",
+			"options": [
+				{
+					"id": "what_did_tablet_say",
+					"label": "What else did the tablet say?"
+				},
+				{ "id": "sounds_crazy", "label": "That sounds like madness." },
+				{ "id": "tell_me_more", "label": "I want to know more about him." }
+			]
+		},
+
+		"what_did_tablet_say": {
+			"speaker": "Ralof",
+			"text": "That he mastered arts with impossible names... React, Next.js, TypeScript, Node.js... I read it three times and still didn't understand. I tried pronouncing them out loud and a guard gave me a strange look. This world was forged with something called Three.js and Astro. I don't know if those are spells, alchemist tools or dragon names. But the tablet mentioned them with great respect.",
+			"options": [
+				{ "id": "where_to_find", "label": "Where can I find him?" },
+				{ "id": "other_creations", "label": "Does he have other creations?" },
+				{ "id": "what_does_he_seek", "label": "What does he seek?" }
+			]
+		},
+
+		"where_to_find": {
+			"speaker": "Ralof",
+			"text": "The tablet mentioned something about... pressing a button? A contact button. I don't know what a button means in this context — in my world buttons are made of cloth and go on tunics. But the tablet said it with emphasis. Press the contact button. That's the next thing I intend to find... though I've been looking for a while and I don't see any tunics around here.",
+			"options": [
+				{ "id": "other_creations", "label": "Does he have other creations?" },
+				{ "id": "what_does_he_seek", "label": "What does he seek?" }
+			]
+		},
+
+		"other_creations": {
+			"speaker": "Ralof",
+			"text": "Yes, there were records. MealTrack... something related to food and pantries, I think. Blog CMS... scribes managing their chronicles, I suppose. They work, the tablet said so. I tried to enter one and couldn't. Perhaps I need one of those... browsers? Another word from the tablet I didn't understand.",
+			"options": [
+				{ "id": "see_creations", "label": "Where can I see them?" },
+				{ "id": "what_does_he_seek", "label": "What does he seek?" }
+			]
+		},
+
+		"see_creations": {
+			"speaker": "Ralof",
+			"text": "The tablet mentioned two portals where his works rest. One called mealtrack-app.vercel.app and another... github.com/esisss. I memorized every word even though I don't understand any of it. They seemed important.",
+			"options": [
+				{ "id": "what_does_he_seek", "label": "What does he seek?" },
+				{ "id": "where_to_find", "label": "Where can I find him?" }
+			]
+		},
+
+		"what_does_he_seek": {
+			"speaker": "Ralof",
+			"text": "That I wonder myself. The tablet said he's curious, that he likes to understand the why behind every tool he uses. That he seeks to build something called... product? SaaS? No idea. In my world we build cabins and fortresses. I suppose it's something similar but digital. That word I don't understand either. The point is he's open to any adventure worth taking. That part I do understand.",
+			"options": [
+				{ "id": "where_to_find", "label": "Where can I find him?" },
+				{ "id": "other_creations", "label": "Does he have other creations?" }
+			]
+		},
+
+		"the_fort": {
+			"speaker": "Ralof",
+			"text": "That fort has been there for a thousand years. The guards don't talk. I managed to get in once, you know, I'm a thief. That's where I found the tablet in the basement. I left with more questions than answers and not a single gold coin. The worst heist of my life. And the most valuable. Now they're after me, of course. Fortunately they don't know how to swim.",
+			"options": [
+				{ "id": "what_did_you_find", "label": "What did you find inside?" },
+				{ "id": "seek_creator", "label": "I seek the creator of this world." }
+			]
+		},
+
+		"sounds_crazy": {
+			"speaker": "Ralof",
+			"text": "That's exactly what I thought. But this world exists, doesn't it? You're here, I'm here, the water is real beneath this boat. Someone made it. And that someone left their mark on a stone tablet in the basement of a forgotten fort. Call it madness if you want. I call it the strangest truth I've found in forty years of stealing.",
+			"options": [
+				{
+					"id": "what_did_tablet_say",
+					"label": "What else did the tablet say?"
+				},
+				{ "id": "where_to_find", "label": "Where can I find him?" }
+			]
+		},
+
+		"see_work": {
+			"speaker": "Ralof",
+			"text": "Straight to the point, I like that. The tablet mentioned two portals where his works rest. One called mealtrack-app.vercel.app and another github.com/esisss. I memorized them word for word even though I understand none of it. They seemed important.",
+			"options": [
+				{ "id": "seek_creator", "label": "Who created all this?" },
+				{ "id": "where_to_find", "label": "Can I find the creator?" }
+			]
+		},
+
+		"tell_me_more": {
+			"speaker": "Ralof",
+			"text": "An entity called Fullstack Developer. Named Jesús. Curious name for a god. He forged this world with arts I don't comprehend — Three.js, Astro — and according to the tablet he's been creating worlds and tools for years. This is just one of them.",
+			"options": [
+				{
+					"id": "what_did_tablet_say",
+					"label": "What else did the tablet say?"
+				},
+				{ "id": "where_to_find", "label": "Where can I find him?" }
+			]
+		}
+	}
+}

@@ -12,6 +12,15 @@ export default defineConfig({
       allowedHosts: ["isa-sound-overseas-brothers.trycloudflare.com"],
     },
   },
+  i18n: {
+    locales:["en", "es"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+    }
+  },
 
   integrations: [react()],
+
 });

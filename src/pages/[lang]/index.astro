@@ -1,0 +1,66 @@
+---
+import ThreeScene from "../../components/ThreeScene.astro";
+import Layout from "../../layouts/Layout.astro";
+import AboutSection from "../../components/AboutSection.astro";
+import SkillsSection from "../../components/SkillsSection.astro";
+import CareerSection from "../../components/CareerSection.astro";
+import ContactSection from "../../components/ContactSection.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import RpgChat from "../../components/RpgChat";
+import "../../styles/globals.css";
+import type { GetStaticPaths } from "astro";
+import { createI18n } from "../../i18n/utils";
+import { type Locale } from "../../i18n/ui";
+
+export const getStaticPaths = (() => {
+	return [
+        { params: { lang: "en" } },
+        { params: { lang: "es" } },
+    ];
+}) satisfies GetStaticPaths;
+const { lang } = Astro.params;
+const { t } = createI18n(lang as Locale);
+---
+
+<Layout>
+    <div class="relative min-h-screen bg-black text-white">
+        <SiteHeader lang={ lang as Locale } t={t} />
+
+        <div
+            id="scene-loader"
+            class="fixed inset-0 z-30 flex items-center justify-center bg-black"
+        >
+            <div class="w-[min(24rem,80vw)]" aria-live="polite" aria-label="Loading scene">
+                <p class="mb-3 text-center text-xs font-semibold tracking-[0.24em] text-white/85 sm:text-sm">
+                    {t("loader.label")} <span id="scene-loader-percent">0</span>%
+                </p>
+                <div class="h-2.5 overflow-hidden rounded-full border border-white/20 bg-slate-900/80">
+                    <div
+                        id="scene-loader-bar"
+                        class="h-full w-0 rounded-full bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed inset-x-0 top-0 z-0 h-svh overflow-hidden">
+            <ThreeScene />
+            <div id="scene-blur-overlay" class="scene-blur-overlay"></div>
+        </div>
+
+        <main class="relative z-10 w-full">
+
+            <RpgChat client:only="react"/>
+        <AboutSection t={t} />
+        <SkillsSection t={t}/>
+        <CareerSection t={t}/>
+        <ContactSection t{t}/>
+        </main>
+    </div>
+
+    <script>
+        import { initSceneLoader } from "../../scripts/loading";
+
+        initSceneLoader();
+    </script>
+</Layout>
