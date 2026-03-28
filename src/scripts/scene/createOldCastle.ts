@@ -11,12 +11,13 @@ export interface CastleOptions {
   position?: { x: number; y: number; z: number };
   scale?: number | { x: number; y: number; z: number };
   rotation?: { x: number; y: number; z: number };
+  loadingManager?: THREE.LoadingManager;
 }
 
 export async function createOldCastle(
   options: CastleOptions = {},
 ): Promise<THREE.Group> {
-  const loader = new GLTFLoader();
+  const loader = new GLTFLoader(options.loadingManager);
   loader.setMeshoptDecoder(MeshoptDecoder);
 
   const gltf = await loader.loadAsync(oldCastleUrl);

@@ -64,8 +64,10 @@ async function loadLampModel(loader: GLTFLoader) {
 	}
 }
 
-export async function createBoat(): Promise<BoatController> {
-	const loader = new GLTFLoader();
+export async function createBoat(
+	loadingManager?: THREE.LoadingManager,
+): Promise<BoatController> {
+	const loader = new GLTFLoader(loadingManager);
 	loader.setMeshoptDecoder(MeshoptDecoder);
 
 	const gltf = await loader.loadAsync(boatUrl);

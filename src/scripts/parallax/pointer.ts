@@ -27,3 +27,15 @@ export function updateParallax(rig: Group, delta: number) {
 	rig.rotation.y = -smoothX * 0.03; // Pan left/right
 	rig.rotation.x = -smoothY * 0.015; // Pan up/down slightly
 }
+
+export function resetParallax(rig?: Group) {
+	targetX = 0;
+	targetY = 0;
+	smoothX = 0;
+	smoothY = 0;
+
+	if (rig) {
+		rig.rotation.y = 0;
+		rig.rotation.x = 0;
+	}
+}
